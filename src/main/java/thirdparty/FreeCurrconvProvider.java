@@ -49,8 +49,10 @@ public class FreeCurrconvProvider implements RateProvider {
 			}
 			reader.close();
 		} catch (Exception e) {
+			StringBuilder bp = new StringBuilder("A Exception was handled from third party with this information : ");
+			bp.append(e.getMessage());
 			throw new ProviderException(
-					"A Exception was handled from third party with this information : " + e.getMessage());
+					bp.toString() );
 		}
 		return Rate.of(rate);
 
