@@ -6,7 +6,7 @@ import domain.Stock;
 import domain.StockType;
 import domain.Value;
 import domain.Wallet;
-import thirdParty.FreeCurrconvProvider;
+import thirdparty.FreeCurrconvProvider;
 
 
 public class WalletIntegTest {
