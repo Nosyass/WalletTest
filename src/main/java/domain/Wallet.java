@@ -31,9 +31,9 @@ public class Wallet {
     public Value computeValue(CurrencyReferential toCurrency, RateProvider rateProvider) {
         if (stocks == null) return StockCurrencyValue.initEmptyValue(toCurrency);
     	 return stocks.parallelStream().reduce(StockCurrencyValue.initEmptyValue(toCurrency),
-                 (firstValue, stock) -> {
-                     return rateProvider.rate(stock.getStockType(), toCurrency).applyRate(stock.value(toCurrency));
-                 },
+                 (firstValue, stock) -> 
+                      rateProvider.rate(stock.getStockType(), toCurrency).applyRate(stock.value(toCurrency))
+                 ,
                  (firstValue, secondValue) -> firstValue.sum(secondValue));
     }
 
