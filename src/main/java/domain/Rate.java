@@ -5,10 +5,10 @@ package domain;
  * @author yassine.sahli
  */
 public class Rate {
-    private final double rate;
+    private final double rateValue;
 
     private Rate(double rate) {
-        this.rate = rate;
+        this.rateValue = rate;
     }
 
     public static Rate of(double amount) {
@@ -16,6 +16,6 @@ public class Rate {
     }
 
     public StockCurrencyValue applyRate(StockCurrencyValue stockCurrencyValue) {
-        return StockCurrencyValue.of(stockCurrencyValue.amount * rate,stockCurrencyValue.currency);
+        return StockCurrencyValue.of(stockCurrencyValue.amount * rateValue,stockCurrencyValue.currency);
     }
 }
